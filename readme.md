@@ -226,23 +226,7 @@ Each head is a **2D tensor** `[seq_len, head_dim]` (e.g., `[16, 4]`). The heads 
 
 ---
 
-## Why 2D?
-
-**Pros:**
-- Simpler code - no complex N-dimensional indexing
-- Easier to debug and understand
-- Pointer arithmetic replaces fancy striding
-
-**Cons:**
-- No broadcasting across batch/heads
-- Manual slicing with loops and memcpy
-- Harder to extend to variable batch sizes
-
-This is a **minimal educational implementation** - production frameworks (PyTorch, JAX) use 3D/4D tensors with automatic broadcasting.
-
----
-
-## Commands Used During This Session
+## Commands
 
 Below are the terminal commands used while validating/fixing autograd vs non-autograd paths and DAG output.
 
